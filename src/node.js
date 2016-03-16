@@ -374,7 +374,7 @@ networkMap.extend(networkMap.Node, {
 	 * @return {SVG.BBox} The nodes bounding box
 	 */
 	bbox: function(){
-		return this.svg.tbox();
+		return this.svg.gbox();
 	},
 
 	/**
