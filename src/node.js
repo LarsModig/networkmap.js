@@ -253,7 +253,7 @@ networkMap.extend(networkMap.Node, {
 	 * @return {number} The x coordinate of the node
 	 */
 	x: function(){
-		return this.svg.bbox().x;
+		return this.svg.gbox().x;
 	},
 	
 	/**
@@ -263,7 +263,7 @@ networkMap.extend(networkMap.Node, {
 	 * @return {number} The y coordinate of the node
 	 */
 	y: function(){
-		return this.svg.bbox().y;
+		return this.svg.gbox().y;
 	},
 
 	/**

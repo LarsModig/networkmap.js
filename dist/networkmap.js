@@ -7150,6 +7150,7 @@ networkMap.ColorLegend = function(colormap, options){
 	// A timing issue seems to cause the bbox to
 	// return an incorrect value
 	setTimeout(function(){
+		console.log(4);
 		var bbox = this.svg.bbox();
 		if (bbox.x === 0 && bbox.y === 0){
 			return this;
@@ -7245,6 +7246,7 @@ networkMap.extend(networkMap.ColorLegend, {
 	 * @return {networkMap.ColorLegend} self
 	 */
 	_move: function(){
+		console.log(5);
 		var bbox = this.svg.bbox();
 		
 		this.container.style.width = Math.ceil(bbox.width) + 'px';
@@ -9325,7 +9327,7 @@ networkMap.extend(networkMap.Node, {
 	 * @return {number} The x coordinate of the node
 	 */
 	x: function(){
-		return this.svg.bbox().x;
+		return this.svg.gbox().x;
 	},
 	
 	/**
@@ -9335,7 +9337,7 @@ networkMap.extend(networkMap.Node, {
 	 * @return {number} The y coordinate of the node
 	 */
 	y: function(){
-		return this.svg.bbox().y;
+		return this.svg.gbox().y;
 	},
 
 	/**
@@ -9446,7 +9448,7 @@ networkMap.extend(networkMap.Node, {
 	 * @return {SVG.BBox} The nodes bounding box
 	 */
 	bbox: function(){
-		return this.svg.tbox();
+		return this.svg.gbox();
 	},
 
 	/**
@@ -10012,6 +10014,7 @@ networkMap.extend(networkMap.LinkPath, {
 	},
 	
 	getCenter: function(){
+		console.log(3);
 		var bbox = this.svg.bbox();
 			
 		return {
